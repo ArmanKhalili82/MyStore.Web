@@ -1,0 +1,44 @@
+﻿@using MyStore.Models.Models
+@model List<Order>
+
+<div class="container">
+    <div class="row pt-4 pb-2">
+        <div class="col-6">
+            <h2 class="text-primary">
+                Order History
+            </h2>
+        </div>
+    </div>
+
+    <table class="table table-bordered table-striped">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Order Number</th>
+                <th>Address</th>
+                <th>Email</th>
+                <th>Phone</th>
+                <th>Order Date</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@item.Name</td>
+                    <td>@item.OrderNo</td>
+                    <td>@item.Address</td>
+                    <td>@item.Email</td>
+                    <td>@item.Phone</td>
+                    <td>@item.OrderDate</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+    <div>
+        <a asp-controller="Home" asp-action="Index" class="btn btn-outline-secondary border form-control">
+            Back To List
+        </a>
+    </div>
+</div>
+

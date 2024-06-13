@@ -1,0 +1,34 @@
+﻿@using MyStore.Models.Models
+@model List<Products>
+
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<br />
+<div class="row">
+    @foreach (var product in Model)
+    {
+        <div class="col-4">
+            <div class="card mb-4">
+                <div class="card-header">
+                    <h4 class="my-0 font-weight-normal">
+                        <label style="font-size: 1rem; color: steelblue">@product.Name</label>
+                    </h4>
+                </div>
+                <img src="~/@product.Image" alt="Card Image" class="card-img-top" style="height: 18em;" />
+                <div class="card-header">
+                    <div class="d-flex justify-content-between alignalign-items-center">
+                        <div class="btn-group">
+                            <label style="font-size: 1rem;color: orange"><b>Price : @product.Price</b></label>
+                        </div>
+                        <a asp-action="Details" asp-controller="Home" asp-route-id="@product.Id" class="btn btn-success pull-right btn-outline-info">More Info</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    }
+</div>
+<
+
+
