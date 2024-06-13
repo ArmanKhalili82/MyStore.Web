@@ -68,6 +68,9 @@
         <thead>
             <tr>
                 <th>
+                    @Html.DisplayNameFor(x => x.Image)
+                </th>
+                <th>
                     @Html.DisplayNameFor(x => x.Name)
                 </th>
                 <th>
@@ -89,6 +92,9 @@
             @foreach (var item in Model)
             {
                 <tr>
+                    <td>
+                        <img src="~/@item.Image" width="200px" height="150px" />
+                    </td>
                     <td>@item.Name</td>
                     <td>@item.Description</td>
                     <td>@item.Price</td>
